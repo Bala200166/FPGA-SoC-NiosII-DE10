@@ -1,30 +1,71 @@
-# Lab 1 – Nios II PIO and Performance Analysis
-
-Coursework completed as part of the **Electronic Microsystems** module.
-
-> **Team coursework:** This laboratory was completed as part of a three-member student team. The original report contains the names of all contributors.
+# Lab 1 - Nios II PIO and Performance Analysis
 
 ## Overview
 
-This laboratory focused on hardware/software interaction on an FPGA-based SoC using the **Nios II soft-core processor** on a **DE10 FPGA platform**.
+FPGA/SoC laboratory using the **Nios II soft-core processor** on a **DE10 FPGA platform**, with hardware peripherals configured through **Intel Platform Designer/Qsys**.
 
-The work involved configuring peripherals in **Intel Platform Designer/Qsys**, accessing hardware from C through memory-mapped I/O, controlling LEDs and switches, integrating arithmetic hardware, and measuring execution performance.
+The work focused on GPIO/PIO interfacing, memory-mapped hardware access from C, and comparing software execution with FPGA-based hardware acceleration.
 
-## Main Activities
+> **Team coursework:** Completed as part of a three-member student team. The original report contains the names of all contributors.
 
-### GPIO / PIO Interfacing
+## Work Completed
 
 - Controlled FPGA LEDs from a Nios II C application.
-- Modified software delay values to observe different LED blinking periods.
-- Worked with FPGA slide switches through a 4-bit PIO input.
-- Read switch states from software and copied the corresponding values to the LEDs.
-- Used Altera Avalon PIO access macros for memory-mapped peripheral communication.
+- Read slide-switch inputs through Avalon PIO peripherals.
+- Transferred switch values to LEDs using memory-mapped I/O.
+- Configured PIO peripherals using Platform Designer/Qsys.
+- Integrated arithmetic hardware into the FPGA-based SoC.
+- Compared software and hardware multiplication/division.
+- Measured execution cycles using hardware performance counters.
+- Evaluated the impact of Nios II processor configurations and compiler optimization.
 
-Example operations used during the laboratory:
+## Key Implementation
+
+Memory-mapped Avalon PIO access was performed from C using operations such as:
 
 ```c
 IOWR_ALTERA_AVALON_PIO_DATA(LEDPIO_BASE, 0xFF);
-IOWR_ALTERA_AVALON_PIO_DATA(LEDPIO_BASE, 0x00);
 
 value = IORD_ALTERA_AVALON_PIO_DATA(SWITCH_PIO_BASE);
 IOWR_ALTERA_AVALON_PIO_DATA(LEDPIO_BASE, value);
+```
+
+This allowed software running on the **Nios II processor** to directly interact with FPGA hardware peripherals.
+
+## Performance Analysis
+
+Software arithmetic operations were compared with hardware-assisted implementations.
+
+Execution cycles were measured using performance counters to study:
+
+- software vs. hardware multiplication
+- software vs. hardware-assisted arithmetic
+- processor configuration differences
+- effect of compiler optimization
+
+This introduced practical concepts of **hardware acceleration and hardware/software trade-offs**.
+
+## Practical Skills Demonstrated
+
+- Nios II embedded C programming
+- FPGA hardware/software integration
+- GPIO / PIO interfacing
+- Avalon memory-mapped I/O
+- Platform Designer / Qsys
+- Hardware peripheral integration
+- Execution-cycle measurement
+- Hardware acceleration concepts
+
+## Tools
+
+**Intel Quartus Prime | Platform Designer/Qsys | Nios II | Avalon PIO | Embedded C | DE10 FPGA**
+
+## Result
+
+Successfully implemented processor-to-peripheral communication on the DE10 platform and compared software execution with dedicated FPGA hardware using measured performance data.
+
+## Report
+
+Full implementation details, code extracts, hardware configurations and experimental results are available here:
+
+[Lab1_NiosII_PIO_Performance.pdf](Lab1_NiosII_PIO_Performance.pdf)
