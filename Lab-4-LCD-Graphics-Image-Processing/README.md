@@ -2,9 +2,9 @@
 
 ## Overview
 
-FPGA/SoC laboratory using the **Nios II soft-core processor** on a **DE10 platform** to control a graphical LCD from embedded C.
+FPGA/SoC laboratory using the **Nios II soft-core processor** on a **DE10 FPGA platform** to control a graphical LCD from embedded C.
 
-This coursework was completed as part of a **three-member group assignment**.
+> **Team coursework:** Completed as part of a three-member student team. The original report contains the names of all contributors.
 
 ## Work Completed
 
@@ -54,9 +54,9 @@ Gray = 0.299 × R + 0.587 × G + 0.114 × B
 
 ## Tools
 
-**Intel Quartus Prime | Nios II | DE10 FPGA | C**
+**Intel Quartus Prime | Nios II | Embedded C | DE10 FPGA | Graphical LCD**
 
-## Results
+## Result
 
 Successfully implemented pixel-level graphical output, colour patterns, French flag rendering, intensity variation and image display on the DE10 LCD.
 
