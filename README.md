@@ -45,4 +45,4 @@ The mini-project implemented live camera color-channel transformation and compar
 
 Each folder contains a concise README together with the available laboratory/project report and relevant source or configuration files.
 
-> All laboratory and mini-project work in this repository was completed as part of three-member student teams. Team-work attribution is stated in the corresponding documentation.
+> All laboratory and mini-project work in this repository was completed as part of three-member student teams. Team-work attribution is stated in the corresponding report documentation.
